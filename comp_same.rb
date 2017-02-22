@@ -32,16 +32,16 @@
 
 def comp(array1, array2)
   status = true
-  if array1.nil? || array1.empty?
+  if array1.nil? || array1.empty? || array2.nil? || array2.empty?
     status = false
-  elsif array2.nil? || array2.empty?
-    status = false
+  # elsif array2.nil? || array2.empty?
+  #   status = false
   else
     array1.each do |num|
-      if array2.include?(num*num) == false
-        status = false
-      end
-    # status = false if !array2.include?(num*num)
+      # if array2.include?(num*num) == false
+      #   status = false
+      # end
+      status = false if !array2.include?(num*num)
     end
   end
   status
@@ -58,3 +58,6 @@ f = nil
 p comp(a, b)
 p comp(c, d)
 p comp(e, d)
+p comp(c, d)
+p comp(f, c)
+p comp(c, f)
