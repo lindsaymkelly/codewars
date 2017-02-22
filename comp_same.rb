@@ -32,8 +32,17 @@
 
 def comp(array1, array2)
   status = true
-  array1.each do |num|
-    status = false if !array2.include?(num*num)
+  if array1.nil? || array1.empty?
+    status = false
+  elsif array2.nil? || array2.empty?
+    status = false
+  else
+    array1.each do |num|
+      if array2.include?(num*num) == false
+        status = false
+      end
+    # status = false if !array2.include?(num*num)
+    end
   end
   status
 end
@@ -44,5 +53,8 @@ a = [121, 144, 19, 161, 19, 144, 19, 11]
 b = [121, 14641, 20736, 361, 25921, 361, 20736, 361]
 c = [121, 144, 19, 161, 19, 144, 19, 11]  
 d = [132, 14641, 20736, 361, 25921, 361, 20736, 361]
+e = []
+f = nil
 p comp(a, b)
 p comp(c, d)
+p comp(e, d)
