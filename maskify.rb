@@ -14,8 +14,14 @@
 # maskify('Nananananananananananananananana Batman!') # should return '####################################man!'
 
 def maskify(cc)
-  ("#" * (cc.length - 4)) + cc[-4..-1]
+  cc.length <= 4 ? cc : ("#" * (cc.length - 4)) + cc[-4..-1]
+  # if cc.length <= 4
+  #   cc
+  # else
+  #   ("#" * (cc.length - 4)) + cc[-4..-1]
+  # end
 end
 
 p maskify('4556364607935616')
-# p maskify('1')
+p maskify('1')
+p maskify('11111')
