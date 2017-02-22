@@ -36,11 +36,12 @@
 # pass the sum back to digital root
 
 def digital_root(n)
-  if n.to_s.length == 1
-    n 
-  else
-    digital_root(n.to_s.chars.map(&:to_i).inject(:+))
-  end
+  # if n.to_s.length == 1
+  #   n 
+  # else
+  #   digital_root(n.to_s.chars.map(&:to_i).inject(:+))
+  # end
+  n.to_s.length == 1 ? n : digital_root(n.to_s.chars.map(&:to_i).inject(:+))
 end
 
 p digital_root(16)
