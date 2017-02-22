@@ -39,8 +39,7 @@ def digital_root(n)
   if n.to_s.length == 1
     n 
   else
-    num_array = n.to_s.chars.map(&:to_i)
-    digital_root(num_array.inject(:+))
+    digital_root(n.to_s.chars.map(&:to_i).inject(:+))
   end
 end
 
