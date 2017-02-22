@@ -30,22 +30,35 @@
 
 # If a or b are empty the result is evident by itself.
 
+# def comp(array1, array2)
+#   status = true
+#   if array1.nil? || array1.empty? || array2.nil? || array2.empty?
+#     status = false
+#   # elsif array2.nil? || array2.empty?
+#   #   status = false
+#   else
+#     array1.each do |num|
+#       # if array2.include?(num*num) == false
+#       #   status = false
+#       # end
+#       status = false if !array2.include?(num*num)
+#     end
+#   end
+#   status
+# end
+
 def comp(array1, array2)
-  status = true
-  if array1.nil? || array1.empty? || array2.nil? || array2.empty?
-    status = false
-  # elsif array2.nil? || array2.empty?
-  #   status = false
-  else
-    array1.each do |num|
-      # if array2.include?(num*num) == false
-      #   status = false
-      # end
-      status = false if !array2.include?(num*num)
+  return false if array1.nil? || array2.nil? || array1.length != array2.length
+  a = array1.sort
+  b = array2.sort
+  b.each_with_index do |value, i|
+    if a[i]*a[i] != value
+      return false
     end
   end
-  status
+  return true
 end
+
 
 
 # test code
