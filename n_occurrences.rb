@@ -13,11 +13,20 @@
 #   delete_nth ([20,37,20,21],1) # return [20,37,21]
 
 def delete_nth(order,max_e)
-  grouped_occurrences = order.group_by{ |x| x }.values
-  n = grouped_occurrences.map do |sub_array|
-    sub_array[0...max_e]
+  # grouped_occurrences = order.group_by{ |x| x }.values
+  # n = grouped_occurrences.map do |sub_array|
+  #   sub_array[0...max_e]
+  # end
+  # n.flatten
+  ## Although the above removes the right number of values, it changes the order of the array which is not the desired output
+  response = []
+  order.each do |number|
+    response << number unless response.count(number) == max_e
+    # if response.count(number) < max_e
+    #   p response << number 
+    # end
   end
-  n.flatten
+  response
 end
 
 p delete_nth([20,37,20,21], 1)
