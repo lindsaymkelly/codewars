@@ -14,9 +14,11 @@
 
 def delete_nth(order,max_e)
   grouped_occurrences = order.group_by{ |x| x }.values
-  grouped_occurrences.map do |sub_array|
-    sub_array[0...max_e].join
+  n = grouped_occurrences.map do |sub_array|
+    sub_array[0...max_e]
   end
+  n.flatten
 end
 
 p delete_nth([20,37,20,21], 1)
+p delete_nth([1,1,3,3,7,2,2,2,2], 3)
