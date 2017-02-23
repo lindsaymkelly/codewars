@@ -22,9 +22,6 @@ def delete_nth(order,max_e)
   response = []
   order.each do |number|
     response << number unless response.count(number) == max_e
-    # if response.count(number) < max_e
-    #   p response << number 
-    # end
   end
   response
 end
