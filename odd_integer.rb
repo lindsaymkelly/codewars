@@ -6,7 +6,7 @@ def find_it(seq)
   grouped_nums = seq.group_by{ |x| x }.values
   grouped_nums.each do |group|
     if group.length % 2 != 0
-      return group 
+      return group.uniq.join.to_i
     end
   end
 end
