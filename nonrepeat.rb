@@ -7,5 +7,7 @@
 # If a string contains all repeating characters, it should return the empty string ("").
 
 def  first_non_repeating_letter(s) 
-  # Code go here
+  grouped_letters = s.group_by{ |x| x }.values
 end
+
+p first_non_repeating_letter('stress')
